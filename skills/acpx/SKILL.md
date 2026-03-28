@@ -79,11 +79,13 @@ Friendly agent names resolve to commands:
 - `cursor` -> `cursor-agent acp`
 - `copilot` -> `copilot --acp --stdio`
 - `droid` -> `droid exec --output-format acp` (`factory-droid` and `factorydroid` also resolve to `droid`)
-- `kimi` -> `kimi acp`
-- `opencode` -> `npx -y opencode-ai acp`
-- `kiro` -> `kiro-cli acp`
+- `iflow` -> `iflow --experimental-acp`
 - `kilocode` -> `npx -y @kilocode/cli acp`
+- `kimi` -> `kimi acp`
+- `kiro` -> `kiro-cli acp`
+- `opencode` -> `npx -y opencode-ai acp`
 - `qwen` -> `qwen --acp`
+- `trae` -> `traecli acp serve`
 
 Rules:
 
@@ -321,6 +323,13 @@ Raw custom adapter command:
 
 ```bash
 acpx --agent './bin/custom-acp-server --profile ci' 'run validation checks'
+```
+
+Flow run:
+
+```bash
+acpx flow run ./my-flow.ts --input-file ./flow-input.json
+acpx flow run examples/flows/branch.flow.ts --input-json '{"task":"FIX: add a regression test"}'
 ```
 
 Repo-scoped review with permissive mode:
